@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 // INTRODUCTION ---
 /*
@@ -132,9 +132,11 @@ class HelloWorld {
 }*/
 
 // STRINGS PRACTICE ---
+
+/*
 class HelloWorld {
     public static void main(String[] args) {
-        /*char percentSign = '%';
+        char percentSign = '%';
 
         System.out.println(percentSign);
 
@@ -191,7 +193,7 @@ class HelloWorld {
         System.out.println(string1.equals(string2));
         System.out.println(string1.equalsIgnoreCase(string2));
 
-         */
+
 
         String string = "The sky is blue.";
 
@@ -201,5 +203,73 @@ class HelloWorld {
 
         System.out.println(string.contains("freeCodeCamp"));
 
+    }
+}
+
+         */
+
+// USER INPUTS PRACTICE ---
+
+/*
+class HelloWorld{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is your name?");
+        String name = scanner.nextLine();
+
+        System.out.printf("Hello %s. Howe old are you?", name);
+        int age = Integer.parseInt(scanner.nextLine());
+
+        double gpa = Double.parseDouble(scanner.nextLine());
+
+        System.out.printf("%d is an excellent age to start programming. What language do you prefer?", age);
+        String language = scanner.nextLine();
+
+        System.out.printf("%s is a great programming language.", language);
+
+        scanner.close();
+    }
+}
+
+ */
+
+
+// CONDITIONAL STATEMENTS PRACTICE ---
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your first number: ");
+        double number1 = scanner.nextDouble();
+
+        System.out.print("Enter your second number: ");
+        double number2 = scanner.nextDouble();
+
+        System.out.print("Enter the operation you would like to perform: ");
+        String operation = scanner.nextLine();
+
+        if(operation.equals("sum")){
+            System.out.printf("%f + %f = %f", number1, number2, number1 + number2);
+        }
+        else if(operation.equals("sub")){
+            System.out.printf("%f - %f = %f", number1, number2, number1 - number2);
+        }
+        else if(operation.equals("mul")){
+            System.out.printf("%f * %f = %f", number1, number2, number1 * number2);
+        }
+        else if(operation.equals("div")){
+            if(number2 != 0) {
+                System.out.printf("%f / %f = %f", number1, number2, number1 / number2);
+            }
+            else {
+                System.out.println("Cannot divide by zero");
+            }
+        }
+        else{
+            System.out.println("Invalid operation");
+        }
+        scanner.close();
     }
 }
