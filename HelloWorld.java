@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 // INTRODUCTION ---
 /*
@@ -236,6 +239,8 @@ class HelloWorld{
 
 
 // CONDITIONAL STATEMENTS PRACTICE ---
+/*
+
 
 class HelloWorld {
     public static void main(String[] args) {
@@ -270,6 +275,193 @@ class HelloWorld {
         else{
             System.out.println("Invalid operation");
         }
+
+        switch(operation){
+            case "sum":
+                System.out.printf("%f + %f = %f", number1, number2, number1 + number2);
+                break;
+            case "sub":
+                System.out.printf("%f - %f = %f", number1, number2, number1 - number2);
+                break;
+            case "mul":
+                System.out.printf("%f * %f = %f", number1, number2, number1 * number2);
+                break;
+            case "div":
+                if(number2 != 0) {
+                    System.out.printf("%f / %f = %f", number1, number2, number1 / number2);
+                    break;
+                }
+                else{
+                    System.out.println("Cannot divide by 0");
+                    break;
+                }
+            default:
+                System.out.println("Invalid operation");
+                break;
+        }
+
         scanner.close();
+    }
+}
+*/
+
+
+// ARRAY PRACTICE ---
+
+/*class HelloWorld {
+    public static void main(String[] args) {
+        //char vowels[] = {'a', 'u', 'o', 'i', 'e'};
+
+        //Arrays.sort(vowels);
+
+        int startingIndex = 1;
+        int endingIndex = 4;
+        //char key = 'b';
+
+        //int foundItemIndex = Arrays.binarySearch(vowels, key);
+
+        //System.out.println(Arrays.toString(vowels));
+        //System.out.println(foundItemIndex);
+
+        //Arrays.fill(vowels, startingIndex, endingIndex, 'x');
+
+        //System.out.println(Arrays.toString(vowels));
+
+
+        int numbers[] = {1, 2, 3, 4, 5};
+
+        int copyOfNumbers[] = Arrays.copyOf(numbers, numbers.length);
+
+        System.out.println(numbers == copyOfNumbers);
+        System.out.println(Arrays.equals(numbers, copyOfNumbers));
+
+        Arrays.fill(numbers, 0);
+
+        System.out.println(Arrays.toString(numbers));
+        System.out.println(Arrays.toString(copyOfNumbers));
+        System.out.println(numbers == copyOfNumbers);
+        System.out.println(Arrays.equals(numbers, copyOfNumbers));
+    }
+}
+
+ */
+
+
+// FOR LOOPS PRACTICE ---
+/*
+
+
+public class HelloWorld {
+    public static void main(String[] args) {
+
+        //int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        //int sum = 0;
+
+        //for(int index = 1; index < numbers.length; index++) {
+            //System.out.print(numbers[index]);
+
+            //sum += numbers[index];
+        //}
+        //System.out.println(sum);
+
+        //int number = 5;
+
+        //for(int mult = 1; mult < 10; mult++){
+            //System.out.printf("%d X %d = %d\n", number, mult, number*mult);
+        //}
+
+        //for(int number = 1; number < 10; number++) {
+            //for(int multiplier = 1; multiplier < 10; multiplier++) {
+                //System.out.printf("%d X %d = %d \n\n", number, multiplier, number*multiplier);
+            //}
+        //}
+
+        int numbers[] = {1, 2, 3, 4, 5};
+
+        int sum = 0;
+
+        for(int number : numbers) {
+            sum += number;
+        }
+        System.out.println(sum);
+    }
+}
+
+ */
+
+// WHILE LOOPS PRACTICE ---
+
+/*public class HelloWorld {
+    public static void main(String[] args) {
+        int number = 5;
+        int multiplier = 1;
+
+        //while(multiplier <= 10){
+            //System.out.printf("%d X %d = %d",number,  multiplier, number*multiplier);
+
+            //multiplier++;
+        //}
+
+        do{
+            System.out.printf("%d * %d = %d", number, multiplier, number*multiplier);
+
+            multiplier++;
+        }while(multiplier <= 10);
+    }
+}
+
+ */
+
+// ARRAYLIST PRACTICE ---
+
+public class HelloWorld {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+        //numbers.add(1);
+        //numbers.add(2);
+        //numbers.add(3);
+        //numbers.add(4);
+        //numbers.add(5);
+
+        //numbers.remove(Integer.valueOf(4));
+
+        //System.out.println(numbers.toString());
+        //System.out.println(numbers.get(2));
+
+        //numbers.clear();
+        //System.out.println(numbers.toString());
+
+        //numbers.set(2, Integer.valueOf(30));
+
+        numbers.add(5);
+        numbers.add(7);
+        numbers.add(3);
+        numbers.add(9);
+        numbers.add(4);
+
+        System.out.println(numbers.toString());
+
+        numbers.sort(Comparator.naturalOrder());
+
+        System.out.println(numbers.toString());
+
+        numbers.sort(Comparator.reverseOrder());
+
+        System.out.println(numbers.toString());
+
+        System.out.println(numbers.contains(Integer.valueOf(1)));
+        System.out.println(numbers.contains(Integer.valueOf(7)));
+        System.out.println(numbers.isEmpty());
+
+        System.out.println(numbers.toString());
+        
+        numbers.forEach(number ->{
+            System.out.println(number * 2);
+        });
+
+        System.out.println(numbers.toString());
     }
 }
