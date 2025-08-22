@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.time.LocalDate;
 
 // INTRODUCTION ---
 /*
@@ -414,7 +416,7 @@ public class HelloWorld {
  */
 
 // ARRAYLIST PRACTICE ---
-
+/*
 public class HelloWorld {
     public static void main(String[] args) {
 
@@ -465,3 +467,94 @@ public class HelloWorld {
         System.out.println(numbers.toString());
     }
 }
+
+ */
+
+// HASHMAPS PRACTICE ---
+
+/*
+
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        HashMap<String, Integer> examScores = new HashMap<String, Integer>();
+
+        examScores.put("Math", 75);
+        examScores.put("English", 90);
+        examScores.put("Sociology", 80);
+        examScores.put("Computer Science", 100);
+
+        //System.out.println(examScores.toString());
+        ///System.out.println(examScores.get("English"));
+
+        //examScores.putIfAbsent("Math", 70);
+        //examScores.replace("Math", 70);
+
+        //System.out.println(examScores.containsKey("English"));
+
+        //examScores.remove("English");
+
+        //System.out.println(examScores.containsKey("English"));
+
+        //examScores.clear();
+
+        //System.out.println(examScores.size());
+        //System.out.println(examScores.isEmpty());
+
+        //System.out.println(examScores.toString());
+
+        examScores.forEach((subject, score) -> {
+            examScores.replace(subject, score - 10);
+        });
+
+        System.out.println(examScores.toString());
+    }
+}
+
+ */
+
+// OBJECT ORIENTATED PROGRAMMING PRACTICE ---
+
+class HelloWorld {
+    public static void main(String[] args) {
+
+        Book book = new Book("Carmilla", "Sheridan Le Fanu", 270);
+        AudioBook dracula = new AudioBook("Dracula", "Bram Stroker", 30000);
+        EBook jeeves = new EBook("Carry On Jeeves", "P.G. Wodehouse", 280, "PDF");
+
+        System.out.println(dracula.toString());
+        System.out.println(book.toString());
+        System.out.println(jeeves.toString());
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
