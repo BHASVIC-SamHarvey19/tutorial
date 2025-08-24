@@ -1,10 +1,7 @@
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.awt.*;
 
 public class HandlerPanel {
@@ -113,5 +110,53 @@ public class HandlerPanel {
                 copiedList.setListData(transformerList.getSelectedValuesList().toArray(new String[0]));
             }
         });
+
+        MouseHandler handler = new MouseHandler();
+        mainPanel.addMouseListener(handler);
+        mainPanel.addMouseMotionListener(handler);
+    };
+    private class MouseHandler extends MouseAdapter implements MouseListener, MouseMotionListener {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if(e.isMetaDown()){
+                outputTextField.setText(String.format ("Right Clicked at [%d %d]", e.getX(), e.getY()));
+            }
+            else if(e.isAltDown()){
+                outputTextField.setText(String.format ("Middle Clicked at [%d %d]", e.getX(), e.getY()));
+            }
+            else{
+                outputTextField.setText(String.format ("Left Clicked at [%d %d]", e.getX(), e.getY()));
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            //outputTextField.setText(String.format ("Pressed at [%d %d]", e.getX(), e.getY()));
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            //outputTextField.setText(String.format ("Released at [%d %d]", e.getX(), e.getY()));
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            outputTextField.setText(String.format ("Entered at [%d %d]", e.getX(), e.getY()));
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            outputTextField.setText(String.format ("Exited at [%d %d]", e.getX(), e.getY()));
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+            outputTextField.setText(String.format ("Dragged at [%d %d]", e.getX(), e.getY()));
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            outputTextField.setText(String.format ("Moved at [%d %d]", e.getX(), e.getY()));
+        }
     }
 }
